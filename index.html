@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>letterify</title>
+	<style>
+		*{margin:0;padding:0;}
+	</style>
+	<script src="letterify.js"></script>
+</head>
+<body>
+	<p id='a'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, temporibus.</p>
+	<p class='a'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, temporibus.</p>
+	<h1 class='a'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, temporibus.</h1>
+	<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, temporibus.</h3>
+	<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, temporibus.</h3>
+	<script>
+		letterify(document.getElementById('a'));
+		letterify(document.getElementsByClassName('a'));
+		letterify(document.getElementsByTagName('h3'));
+	</script>
+</body>
+</html>
