@@ -1,13 +1,20 @@
 Letterify
 =========
+![Letterify](http://evgenin.ru/github/images/letterify.png)
 
-Script wrap every letter in span.
+Этот скрипт оборачивает каждую букву элемента в span.js_letterify
 
 
-How to use
+Использование
 ----------
 
-```html
-<script>letterify(node)</script>
+```javascript
+	letterify(elem);
 ```
-you can use it for one element or list of elements
+
+Отмена действий
+----------
+
+```javascript
+	deletterify(elem);
+```

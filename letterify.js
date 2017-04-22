@@ -1,23 +1,44 @@
-function letterify(node){
-	var letters;
-	if(node.length>1){
-		for(var i=0,length=node.length;i<length;i++){
-			letterify(node[i]);
+(function(window, undefined) {
+	"use strict";
+
+	function letterify(node){
+
+		var letters = node.textContent,
+			span;
+
+		node.innerHTML = '';
+
+		for( var i = 0, length = letters.length; i < length; i++ ){
+			span = document.createElement( 'span' );
+			span.classList.add('js_letterify');
+			span.innerHTML = letters[ i ];
+			node.appendChild( span );
 		}
+		node.classList.add('js_letterified');
+		
 	}
-	else if(node.length==undefined){
-		letToSpan(node)
-	}
-	else if(node.length==1){
-		letToSpan(node[0])
-	}
-	function letToSpan(node){
-		letters=node.textContent;
-		node.innerHTML='';
-		for(var i=0,length=letters.length;i<length;i++){
-			span=document.createElement('span');
-			span.innerHTML=letters[i];
-			node.appendChild(span);
+	function deletterify(node){
+		var elems, parent, elem, clone, string = '';
+
+		clone = node.cloneNode(true);
+		elems = clone.querySelectorAll('.js_letterify');
+
+		for(var i = 0, length = elems.length; i < length; i++){
+			elem = elems[i];
+			string += elem.textContent;
 		}
+		node.innerHTML = string;
+		node.classList.remove('js_letterified');
 	}
-}
+
+	var elems = document.querySelectorAll('[data-letterify]'),
+		elem;
+
+	for(var i = 0, length = elems.length; i < length; i++){
+		elem = elems[i];
+		letterify(elem);
+	}
+
+	window.letterify = letterify;
+	window.deletterify = deletterify;
+})(window);

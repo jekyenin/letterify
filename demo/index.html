@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>letterify</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.0/gh-fork-ribbon.min.css" />
+	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+</head>
+<body>
+	<div class="main">
+		<h1 class="title" data-letterify>letterify</h1>
+		<p class='description'>Данный плагин разделяет текст в элементе на буквы, оборачивая их в <a href='#' class='letterify'>span.js_letterify<span>сюда стоит потыкать</span></a></p>
+		<p class="info">На самом деле всю эту серьезность нужно убрать) В общем этот скрипт я разместил на GitHub в 2014 году. Тогда я только учился работать с Git, да и вообще писать хоть что-то дельное. Посмотрев на этот скрипт в 2017 мне стало мило и смешно, поэтому решил его переписать. Получилась малая малость, которую можно написать несколькими строками.
+		<b>Удалять жалко!)</b></p>
+		<p class="download"><a href="https://github.com/jekyenin/letterify">Изучить на GitHub</a></p>
+		<p class="download"><a href="https://github.com/jekyenin/letterify/archive/master.zip">Скачать ZIP-архив с плагином</a></p>
+		<footer>
+			<p>2013 <a href="http://evgenin.ru">evgenin.ru</a></p>
+		</footer>
+	</div>
+	<!-- GitHub ribbon -->
+	<a class="github-fork-ribbon" href="https://github.com/jekyenin/letterify" title="Fork me on GitHub">Fork me on GitHub</a>
+	<script src="../letterify.js"></script>
+	<script>
+		var button = document.querySelector('.letterify');
+		button.addEventListener('click', function(event){
+			var elem;
+			event.preventDefault();
+
+			var elems = document.querySelectorAll('[data-letterify]');
+
+			for(var i = 0, length = elems.length; i < length; i++){
+				elem = elems[i];
+
+				if( elem.classList.contains('js_letterified') ){
+					deletterify(elem);
+					return;
+				}
+
+				letterify(elem);
+			}
+
+		}, false);
+	</script>
+</body>
+</html>
