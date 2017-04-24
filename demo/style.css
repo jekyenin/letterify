@@ -111,6 +111,15 @@ a:hover{
 	padding: .7rem 1rem;
 	margin-bottom: 1em;
 }
+.todo{
+	margin-bottom: 1em;
+}
+.todo span{
+	background: rgba(0,0,0,.1);
+	padding: 0px .5em;
+	border-radius: .2em;
+	color: #ffa500;
+}
 footer{
 	position: absolute;
 	bottom: 3px;

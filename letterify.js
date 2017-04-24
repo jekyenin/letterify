@@ -15,6 +15,8 @@
 			node.appendChild( span );
 		}
 		node.classList.add('js_letterified');
+
+		return node;
 		
 	}
 	function deletterify(node){
@@ -29,6 +31,8 @@
 		}
 		node.innerHTML = string;
 		node.classList.remove('js_letterified');
+		
+		return node;
 	}
 
 	var elems = document.querySelectorAll('[data-letterify]'),

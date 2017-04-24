@@ -9,12 +9,12 @@ Letterify
 ----------
 
 ```javascript
-	letterify(elem);
+letterify(elem);
 ```
 
 Отмена действий
 ----------
 
 ```javascript
-	deletterify(elem);
+deletterify(elem);
 ```
