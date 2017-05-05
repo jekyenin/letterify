@@ -49,6 +49,11 @@ body:before{
     display: table-row;
     height: 100%;
 }
+.content{
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+}
 a{
 	color:#00a5ff;
 	text-decoration: none;
